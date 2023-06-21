@@ -1,0 +1,78 @@
+{
+	"info": {
+		"_postman_id": "4a915418-87d8-46b6-9684-4c16e82d777a",
+		"name": "Weather API Automation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28100659"
+	},
+	"item": [
+		{
+			"name": "Respons 1",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"let key= pm.environment.get(\"APIKey\")\r",
+							"console.log('Here is my key: ${key}')"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "in",
+							"value": "query",
+							"type": "string"
+						},
+						{
+							"key": "value",
+							"value": "{{APIkey}}",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "key",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.weatherbit.io/v2.0/current?lat=40.730610&lon=-73.935242",
+					"protocol": "https",
+					"host": [
+						"api",
+						"weatherbit",
+						"io"
+					],
+					"path": [
+						"v2.0",
+						"current"
+					],
+					"query": [
+						{
+							"key": "lat",
+							"value": "40.730610"
+						},
+						{
+							"key": "lon",
+							"value": "-73.935242"
+						},
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
